@@ -1,101 +1,119 @@
-# Netlify Next.js + Contentful Minimal Starter
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plywood & Hardware Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f3ef;
+      color: #3b2f2f;
+    }
+    header {
+      background-color: #6b4f3b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #8c6e54;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('your-hero-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #6b4f3b;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #6b4f3b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Plywood & Hardware Solutions</h1>
+    <p>Elegant Designs for Beautiful Spaces</p>
+  </header>
 
-![Screenshot](https://assets.stackbit.com/docs/tutorial-shared-thumb.png)
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-**⚡ View demo:** [nextjs-contentful-starter.netlify.app](https://nextjs-contentful-starter.netlify.app/)
+  <div class="hero">
+    Bring Style to Your Home with Our Premium Plywood
+  </div>
 
-## Prerequisites
+  <section id="products" class="section">
+    <h2>Our Products in Action</h2>
+    <div class="gallery">
+      <img src="image1.jpg" alt="Living Room Design" />
+      <img src="image2.jpg" alt="Kitchen Cabinets" />
+      <img src="image3.jpg" alt="Bedroom Wardrobe" />
+      <img src="image4.jpg" alt="Office Setup" />
+    </div>
+  </section>
 
-Before you begin, please make sure you have the following:
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>
+      We are a trusted plywood and hardware supplier providing high-quality materials
+      for interior design, construction, and custom furniture. With years of experience,
+      we help turn spaces into warm, stylish environments.
+    </p>
+  </section>
 
-- [Netlify account](https://www.netlify.com/)
-- [Contentful account](https://www.contentful.com/)
-- GitHub, GitLab or Bitbucket account
-- Node v18+ or later
-- (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management.
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: info@yourdomain.com</p>
+    <p>Phone: ‪+91-1234567890‬</p>
+    <p>Address: Your Store Address Here</p>
+  </section>
 
-## Getting Started
-
-### Clone this repository
-
-Fork and clone your repository, then run `npm install` in its root directory.
-
-### Create Contentful Space
-
-After signing into Contentful, create a new space. 
-
-### Generate Management Token
-
-If you don't already have a management token (or _personal access token_), generate one. To do so, go into your new empty space, then:
-
-1. Click _Settings_
-1. Choose _API Keys_
-1. Select the _Content management tokens_ tab
-1. Click the button to generate a new token
-
-![Generate content management token](./docs/generate-mgmt-token.png)
-
-### Generate Preview & Delivery API Keys
-
-From the same place you generated the management token, you can now generate API access keys.
-
-1. Select the *content delivery / preview tokens* tab
-1. Choose *Add API key*
-
-### Set Environment Variables
-
-In your project, duplicate `.env.example` to `.env`. 
-
-Fill in the values in the file based on the keys you've created. 
-
-Note: the Contentful space ID can be viewed and copied via *Settings->General Settings* in Contentful.
-
-### Import Content
-
-Import the provided content models & content into Contentful by running the `import.js` script:
-
-    npm run import
-
-If the import fails to run, make sure that you've run `npm install` and that all keys in your `.env` file are set correctly.
-
-### Run the Website
-
-Run the Next.js development server:
-
-    npm run dev
-
-Visit [localhost:3000](http://localhost:3000) and you should see the example content you imported into your new Contentful space.
-
-### Run Netlify Visual Editor in Local Development Mode
-
-Keep the Next.js development server running, and open a new command-line window in the same directory.
-
-Install Stackbit's CLI tools (once):
-    
-    npm i -g @stackbit/cli@latest
-
-Run the CLI:
-
-    stackbit dev
-
-Click the displayed link to [localhost:8090/_stackbit](http://localhost:8090/_stackbit) and the visual editor will open.
-
-### Create a Cloud-Based Netlify Project
-
-To deploy a cloud-based Netlify project your need to connected your repository to Netlify:
-
-1. If you haven't created your GitHub project repository, create it and push your code to GitHub
-2. Open the [app.netlify.com](https://app.netlify.com/), and choose "Import from Git" in the "Import an existing project" section
-3. In the "Configure site and deploy" step you will see the "Visual editor" section. To make it work, you will need to install "Netlify Visual Editor GitHub App" in your GitHub account.
-4. Deploy your project
-
-## Next Steps
-
-Here are a few suggestions on what to do next if you're new to Netlify visual editor:
-
-- Learn [how Netlify visual editor works](https://docs.netlify.com/visual-editor/overview/)
-- Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
-
-## Support
-
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+  <footer>
+    &copy; 2025 Plywood & Hardware Solutions. All rights reserved.
+  </footer>
+</body>
+</html>
